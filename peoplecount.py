@@ -8,9 +8,9 @@ GPIO.setup(8, GPIO.IN) ## pull_up_down=GPIO.PUD_DOWN)
 GPIO.setup(10, GPIO.OUT)
 try:
 
-    api = ApiClient("ec49ebc15fb54ddc35d715fef4bc24aebd3fe01f")
+    api = ApiClient("")
 
-    people = api.get_variable("57fccc9d762542079f5a557c")
+    people = api.get_variable("")
 
 except:
 
