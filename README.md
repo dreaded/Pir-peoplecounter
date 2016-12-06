@@ -11,4 +11,10 @@ Having built the project a number of issues arose. Temporally losss of internet 
 
 Some method of keeping the script running was needed. I choose a program called ´forever´ which i installed as follows:
 
-first i intalled the npm package manager ¨sudo apt-get install npm¨ followed by the forever program ¨sudo npm install forever -g¨ 
+first i intalled the npm package manager 
+
+¨sudo apt-get install npm¨ 
+
+followed by the forever program ¨sudo npm install forever -g¨ 
+
+To run t
