@@ -21,7 +21,7 @@ followed by the forever program
 
 To run the peoplecount program at startup i wrote a small script and called it startup.sh
 
-> #!/bin/bash
+> \#!/bin/bash
 > PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/pi
 > /usr/local/bin/forever start -c /usr/bin/python /home/pi/peoplecount.py
 
