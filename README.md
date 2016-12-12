@@ -73,6 +73,21 @@ Submitting for example an email address
 
 I verified the above command worked, of course subsituting the above data with data relevent to our situation.
 
-I needed the command to run at system boot and at regular intervals as i could never be sure exaclty whenb the ip lease would expire.
+I needed the command to run at system boot and at regular intervals as i could never be sure exaclty when the ip lease would expire.
 
-To run at system boot
+To run at system boot i added
+
+> curl -d email=someone@somehost.tld https://www.feedburner.com/fb/a/emaillverify
+
+to a file i called autostart and moved it to the if-up.d directory located in /etc/network
+
+Scripts in this directory are run after a network inteface is brought up.
+I discovered that a delay was neeeded for the curl command to work. The final script is
+
+> #!bin/bash
+>\/bin/sleep 20
+> curl -d email=someone@somehost.tld https://www.feedburner.com/fb/a/emaillverify
+
+make it executable
+
+> sudo chmod +x autostart
