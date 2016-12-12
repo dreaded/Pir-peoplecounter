@@ -84,10 +84,14 @@ to a file i called autostart and moved it to the if-up.d directory located in /e
 Scripts in this directory are run after a network inteface is brought up.
 I discovered that a delay was neeeded for the curl command to work. The final script is
 
-> #!bin/bash
->\/bin/sleep 20
+> \#!bin/bash
+> /bin/sleep 20
 > curl -d email=someone@somehost.tld https://www.feedburner.com/fb/a/emaillverify
 
 make it executable
 
 > sudo chmod +x autostart
+
+
+
+
