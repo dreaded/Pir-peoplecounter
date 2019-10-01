@@ -1,0 +1,42 @@
+
+#include <LiquidCrystal.h>
+
+int ledPin = 13;
+int pirPin = 7;
+int statusPir = LOW;
+int readPir = 0;
+int counting = 0;
+
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+
+void setup() {
+  pinMode(ledPin, OUTPUT);
+  pinMode(pirPin, INPUT);
+  lcd.begin(16, 2);
+}
+void loop() {
+  readPir = digitalRead(pirPin);
+  if (readPir == HIGH) {
+    digitalWrite(ledPin, HIGH);
+    if (statusPir == LOW) {
+      counting = counting + 1;
+      lcd.setCursor(7, 0);
+      lcd.print(counting);
+      
+      
+
+      statusPir = HIGH;
+    }
+  } else {
+    digitalWrite(ledPin, LOW);
+    if (statusPir == HIGH) {
+      // OFF
+      statusPir = LOW;
+      lcd.setCursor(2, 1);
+      lcd.print("Touchstones #1");
+      
+    }
+  }
+}
+
+// okay lets learning TONE :D
